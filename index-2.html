@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080a12">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Fluxo</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i></div>
+<main>
+  <h1 class="brand">Fluxo</h1>
+  <div id="view"></div>
+</main>
+<button class="fab" data-act="novo" aria-label="Novo lançamento">+</button>
+<nav class="nav glass" aria-label="Seções">
+  <button data-tab="resumo">Resumo</button>
+  <button data-tab="lanc">Lançamentos</button>
+  <button data-tab="contas">Contas</button>
+</nav>
+<div id="sheet" class="sheet" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

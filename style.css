@@ -1,0 +1,56 @@
+:root{--ink:#080a12;--tx:#eef0f8;--mut:#9ca3b8;--pos:#6ee7b7;--neg:#fda4af;--ln:rgba(255,255,255,.12);--ac:linear-gradient(135deg,#a5b4fc,#67e8f9)}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+body{min-height:100vh;background:var(--ink);color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-top:env(safe-area-inset-top)}
+:focus-visible{outline:2px solid #a5b4fc;outline-offset:2px}
+
+/* luzes ao fundo */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;animation:drift 26s ease-in-out infinite alternate}
+.o1{width:62vmax;height:62vmax;left:-24vmax;top:-20vmax;background:#7c6bff}
+.o2{width:48vmax;height:48vmax;right:-20vmax;top:28vh;background:#22d3ee;opacity:.32;animation-delay:-9s}
+.o3{width:44vmax;height:44vmax;left:2vw;bottom:-24vmax;background:#f472b6;opacity:.3;animation-delay:-17s}
+@keyframes drift{to{transform:translate(7vmax,-6vmax) scale(1.18)}}
+@media(prefers-reduced-motion:reduce){.orb{animation:none}}
+
+/* painéis translúcidos */
+.glass{background:rgba(255,255,255,.055);border:1px solid var(--ln);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);box-shadow:0 10px 36px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.08)}
+.p{padding:18px 20px;border-radius:28px}
+
+main{max-width:620px;margin:0 auto;padding:20px 16px calc(150px + env(safe-area-inset-bottom));display:grid;gap:14px}
+#view{display:grid;gap:14px}
+.brand{font-weight:300;font-size:20px;letter-spacing:.02em}
+.sub{color:var(--mut);font-size:13px}
+.big{font-size:44px;font-weight:300;letter-spacing:-.03em;line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums}
+b{font-weight:500;font-variant-numeric:tabular-nums}
+.pos{color:var(--pos)}.neg{color:var(--neg)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.two b{display:block;margin-top:2px;font-size:20px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mes{display:flex;justify-content:center;align-items:center;gap:14px;text-transform:capitalize}
+.cat{margin-top:12px}
+.bar{height:6px;margin-top:6px;border-radius:9px;background:rgba(255,255,255,.08);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:9px;background:var(--ac)}
+.it{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.it:last-child{border:0;padding-bottom:0}
+.meta{display:flex;gap:10px;flex-wrap:wrap}
+.x{background:none;border:0;color:var(--mut);font-size:20px;line-height:1;padding:6px 10px;border-radius:12px;cursor:pointer}
+.x:hover{background:rgba(255,255,255,.08);color:var(--tx)}
+
+/* navegação e ação principal */
+.nav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom));width:min(420px,calc(100% - 28px));display:flex;padding:6px;border-radius:999px}
+.nav button{flex:1;background:none;border:0;color:var(--mut);padding:11px 0;border-radius:999px;font:inherit;cursor:pointer}
+.nav .on{background:rgba(255,255,255,.12);color:var(--tx)}
+.fab{position:fixed;right:max(18px,calc(50% - 292px));bottom:calc(84px + env(safe-area-inset-bottom));width:56px;height:56px;border:0;border-radius:20px;font-size:30px;line-height:1;color:var(--ink);background:var(--ac);box-shadow:0 8px 32px rgba(103,232,249,.35);cursor:pointer}
+
+/* formulários */
+.sheet{position:fixed;inset:0;z-index:10;display:flex;align-items:flex-end;justify-content:center;background:rgba(4,5,10,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.sheet[hidden]{display:none}
+.sheet form{width:min(520px,100%);max-height:92vh;overflow:auto;display:grid;gap:12px;padding:20px 18px calc(20px + env(safe-area-inset-bottom));border-radius:28px 28px 0 0;background:rgba(20,22,34,.62)}
+form.p{display:grid;gap:12px}
+label{display:grid;gap:6px}
+input,select{width:100%;padding:13px 14px;border-radius:14px;border:1px solid var(--ln);background:rgba(255,255,255,.06);color:var(--tx);font:inherit}
+select option{color:#111}
+.seg{display:flex;gap:4px;padding:4px;border-radius:16px;background:rgba(255,255,255,.06)}
+.seg button{flex:1;padding:10px 0;border:0;border-radius:12px;background:none;color:var(--mut);font:inherit;cursor:pointer}
+.seg .on{background:rgba(255,255,255,.14);color:var(--tx)}
+.btn{padding:14px;border:0;border-radius:16px;font:inherit;font-weight:600;color:var(--ink);background:var(--ac);cursor:pointer}
